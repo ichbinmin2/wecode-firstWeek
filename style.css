@@ -1,0 +1,473 @@
+@import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;500;700&family=Open+Sans&display=swap');
+:root {
+    font-family: 'Comfortaa', cursive;
+    font-family: 'Open Sans', sans-serif;
+    --green-color: #3CA655;
+    --pink-color: #E98EA3;
+    --yellow-color: #F1CF28;
+    --red-color: #ED4D41;
+    --blue-color: #478ED5;
+    --main-color: #F1EEE8;
+    --sub-color: #121212;
+    --sub2-color: lightgrey;
+    --main-font: 40px;
+    --mid-font: 23px;
+    --sub-font: 20px;
+    --mini-font: 18px;
+}
+html {
+	scroll-behavior: smooth;
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+}
+body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    background-color: var(--main-color);
+}
+/* ------- main 페이지 -------- */
+.background div{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#img2 {
+    margin-top: -3px;
+}
+/* ------- 헤더 : 시작 ------- */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding-top: 30px;
+    font-size: var(--mid-font);
+}
+header .head-container {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    width: 85%;
+    max-width: 1500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+header .head-container .head-flex {
+    position: relative;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* border: 1px dashed var(--red-color); */
+}
+header .head-container .head-flex a {
+    color: var(--sub-color);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    height: inherit;
+    z-index: 2;
+}
+#header {
+    position: relative;
+    width: 100px;
+    height: 100%;
+    transition: all 0.3s ease-in-out infinite;
+}
+#header:hover .prof-tran, 
+#header:hover .home-tran, 
+#header:hover .arch-tran, 
+#header:hover .cont-tran {
+    opacity: 100%;
+    transform: rotate(180deg);
+}
+#header:hover a {
+    color: var(--main-color);
+}
+#item-tran {
+    position: absolute;
+    z-index: 1;
+    height: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: 1s ease-in-out;
+}
+.home-tran {
+    background-color: var(--pink-color);
+    width: 100px;
+    border-radius: 40% 60% 65% 35% / 30% 45% 35% 60%;
+}
+.prof-tran {
+    background-color: var(--red-color);
+    width: 100px;
+    border-radius: 40% 60% 65% 35% / 30% 45% 35% 60%;
+}
+.arch-tran {
+    background-color: var(--green-color);
+    width: 130px;
+    border-radius: 20% 70% 65% 35% / 30% 45% 65% 70%;
+ }
+.cont-tran {
+    background-color: var(--blue-color);
+    width: 120px;
+    border-radius: 50% 70% 55% 85% / 60% 95% 35% 60%;
+ }
+/* ------- 헤더 : 끝 ------- */
+
+/* ------- 섹션 : 시작 -------- */
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+section .section-container {
+    /* border: 1px solid red; */
+    display: flex;
+    margin-top: 150px;
+    width: 1300px;
+    height: 700px;
+}
+    /* ------- 섹션 : 프로필 시작 ------- */
+.section-container .section-profile {
+    /* border: 1px solid red; */
+    width: 100%;
+    display: grid;
+    grid-template-columns: 500px 800px;
+}
+.prof-items {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+.prof-items img {
+    width: 300px;
+    border-radius: 50%;
+}
+.prof-box {
+    /* border: 1px solid pink; */
+    padding-left: 10px;
+    color: var(--sub-color);
+    width: 80%;
+    margin-top: 20px;
+}
+.prof-box > #name {
+    font-weight: bold;
+    font-size: var(--mid-font);
+    margin: 20px 0;
+}
+hr .line {
+    width: 90px;
+    height: 1px;
+    color: var(--sub-color);
+}
+.prof-box .prof-text {
+    /* border: 1px solid pink; */
+    text-align: left;
+    color: var(--sub-color);
+    font-size: var(--sub-font);
+    margin-bottom: 7px;
+}
+.prof-box .prof-text p {
+    line-height:30px;
+}
+
+    /* ------- 섹션 : 프로필 끝 ------- */
+    /* ------- 섹션 : 키워드 시작  ------- */
+.section-keyword {
+    /* border: 1px solid red; */
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 50px 90px;
+}
+.section-keyword .square {
+    width: 170px;
+    height: 170px;
+    position: relative; /* 부모 */
+}
+.section-keyword span {
+    /* border: 1px solid white; */
+    position: absolute; /* 자식1 */
+    width: inherit;
+    height: inherit;
+    border-radius: 40% 60% 65% 35% / 40% 45% 55% 60%;
+    transition: 0.5s;
+    animation: circle 4s linear infinite;
+}
+
+/* 도형 내 속도 조절
+.square span:nth-child(1){
+    animation: circle 6s linear infinite;
+}
+.square span:nth-child(2){
+    animation: circle 4s linear infinite;
+}
+.square span:nth-child(3){
+    animation: circle 10s linear infinite;
+}*/
+
+.square:hover span {
+    background-color: var(--yellow-color);
+    border: none;
+}
+.square:hover h1 {
+    color: var(--main-color);
+}
+/* 도형 내 투명도 조절
+.square:hover span:nth-child(1) {
+    opacity: 0.3;
+}
+.square:hover span:nth-child(2) {
+    opacity: 0.6;
+}
+.square:hover span:nth-child(3) {
+    opacity: 0.8;
+}
+*/
+
+@keyframes circle {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+.section-keyword .square div {
+    position: absolute; 
+    width: 70%;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--sub-color); /* 자식2 */
+}
+    /* ------- 섹션 : 키워드 끝 ------- */
+    /* ------- 섹션 : 아카이브 시작 ------- */
+.section-flexbox {
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.section-flexbox span {
+    font-weight: bold;
+    font-size: 60px;
+    margin-bottom: 100px;
+}
+.section-archives {
+    /* border: 1px dotted red; */
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.arch-form {
+    /* border: 1px dotted red; */
+    width: 300px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.arch-form span,
+.arch-form a {
+    z-index: 100;
+    position: absolute;
+}
+.arch-form span {
+    font-size: 35px;
+    margin-bottom: 80px;
+    letter-spacing: 1.5px;
+}
+.arch-form a {
+    width: 180px;
+    height: 50px;
+    box-sizing: border-box;
+    margin-top: 100px;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    font-size: var(--mini-font);
+    letter-spacing: 1px;
+    color: var(--sub-color);
+    border: 2px solid var(--sub-color);
+}
+.arch-form a:active {
+    background-color: var(--sub-color);
+    color: var(--main-color);
+}
+#triangle {
+    width: 0;
+    height: 0;
+    border-top: 70px solid transparent;
+    border-left: 200px solid var(--green-color);
+    border-bottom: 150px solid transparent;
+    border-radius: 1% 70% 95% 20% / 20% 50%;
+    animation: move 5s ease-in-out infinite;
+}
+#semicircle {
+    display: block;
+    width: 120px;
+    height: 230px;
+    background-color: var(--pink-color);
+    border-radius: 1% 90% 95% 20% / 10% 80% 30% 40%;
+    animation: move 5s ease-in-out infinite;
+}
+#egg {
+    display: block;
+    width: 140px;
+    height: 150px;
+    background-color: var(--yellow-color);
+    border-radius: 40% 60% 65% 35% / 30% 45% 35% 60%;
+    animation: move 5s ease-in-out infinite;
+}
+
+@keyframes move{
+    0 {
+     transform: rotate(0);
+    }
+    50% {
+     transform: rotate(10deg);
+    }
+    100% {
+     transform: rotate(0);
+    }
+}
+    /* ------- 섹션 : 아카이브 끝 ------- */
+    /* ------- 섹션 : 컨텍트 시작 ------- */
+.section-contact {
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.section-contact .cont-form {
+    margin-bottom: 7px;
+    display: flex;
+    flex-direction: column;
+}
+.cont-form span {
+    font-size: 16px;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    margin-left: 5px;
+    display: block;
+}
+.cont-form input[type=text],
+.cont-form input[type=email] {
+    width: 300px;
+    border: 1px solid lightgrey;
+    height: 30px;
+    border-radius: 5px;
+    padding-left: 10px;
+    outline: none;
+}
+#memo {
+    box-sizing: border-box;
+    margin-bottom: 30px;
+    padding: 10px;
+    border: 1px solid lightgrey;
+    border-radius: 3px;
+    outline: none;
+}
+input[type=submit]{
+    width: 100px;
+    height: 30px;
+    border: none;
+    border-radius: 2px;
+    background-color: var(--sub-color);
+    color: var(--main-color);
+    margin-bottom: 20px;
+    transition: 0.5s ;
+}
+input[type=submit]:active {
+    background-color: var(--blue-color);
+    color: var(--yellow-color);
+}
+    /* ------- 섹션 : 컨텍트 끝 ------- */
+
+/* ------- footer : 시작  ------- */
+footer {
+    /* border: 1px dotted grey; */
+    height: 300px;
+    margin: 30px 0 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    background-color: var(--sub-color);
+}
+.section-footer {
+    /* border: 1px dotted red; */
+    width: 1300px;
+    height: 200px;
+    margin: 40px 0 40px 0;
+    padding: 15px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.cont-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--main-color);
+}
+.cont-info h3 {
+    text-align: center;
+    font-size: var(--mid-font);
+    margin: 0;
+    margin-bottom: 10px;
+}
+.cont-info span{
+    display: block;
+    font-size: var(--mini-font);
+    text-align: center;
+    letter-spacing: 1px;
+    line-height:40px;
+}
+.cont-icon {
+    /* border: 1px dotted red; */
+    width: 100px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    box-sizing: border-box;
+    margin-top: 20px;
+}
+.far,
+.fas,
+.fab {
+    margin-left: 5px;
+    margin-right: 5px;
+    font-size: 20px;
+    color: var(--main-color);
+    background-color: var(--sub-color);
+    text-align: center;
+}
+
